@@ -29,12 +29,11 @@ class DB
     {
         if ($this->pdo == null) {
             try {
-                $strConnection = 'mysql:host='. Config::DB_HOST.';dbname='. Config::DB_NAME;
-                $arrExtraParam= array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-                $pdo = new PDO($strConnection, Config::DB_USER, Config::DB_PASS, $arrExtraParam);
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            }
-            catch(\PDOException $e) {
+                $strConnection = 'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME;
+                $arrExtraParam = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+                $this->pdo = new PDO($strConnection, Config::DB_USER, Config::DB_PASS, $arrExtraParam);
+                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (\PDOException $e) {
                 $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage();
                 die($msg);
             }

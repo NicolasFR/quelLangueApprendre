@@ -1,4 +1,4 @@
-CREATE TABLE "langue" (
+CREATE TABLE "langues" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     "langue" TEXT NOT NULL
 );

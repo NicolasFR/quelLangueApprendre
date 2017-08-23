@@ -16,8 +16,8 @@ class Config
     /***
      * path to the sqlite file
      */
-    const DB_NAME= "langues";
-    const DB_USER ="root";
-    const DB_PASS ="";
+    const DB_NAME = "langues";
+    const DB_USER = "root";
+    const DB_PASS = "";
     const DB_HOST = "localhost";
 }

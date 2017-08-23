@@ -15,7 +15,7 @@ class App
     /**
      * @return string
      */
-    public function newLangue() : string
+    public function newLangue(): string
     {
         return (new Langue())->getLangue();
     }
