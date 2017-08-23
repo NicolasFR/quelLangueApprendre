@@ -1,15 +1,18 @@
 language: php
-dist: trusty
-sudo: required
+sudo: false
 
-addons:
-  sonarcloud:
-    token:
-      secure: "461c1bbbb607c98ccc4a68ec414f045eb949e1e5"
-jdk:
-  - oraclejdk8
-script:
-  - sonar-scanner
 cache:
   directories:
-    - '$HOME/.sonar/cache'
+    - $HOME/.composer/cache/files
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+
+before_install:
+  - composer self-update
+
+script:
+  - make lint
+  - make tmp/coveralls.json'
