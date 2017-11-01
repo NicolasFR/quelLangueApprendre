@@ -1,5 +1,1 @@
-CREATE TABLE "langues" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    "langue" TEXT NOT NULL
-);
-CREATE TABLE sqlite_sequence(name,seq);
+CREATE TABLE `web10217_lang`.`langues` ( `id` INT NOT NULL AUTO_INCREMENT , `langue` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

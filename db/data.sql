@@ -4,7 +4,7 @@ INSERT INTO langues (langue) VALUES ('Chinois');
 INSERT INTO langues (langue) VALUES ('Espagnol');
 INSERT INTO langues (langue) VALUES ('Français');
 INSERT INTO langues (langue) VALUES ('Russe');
-INSERT INTO langues (langue) VALUES ('Albanais');²
+INSERT INTO langues (langue) VALUES ('Albanais');
 INSERT INTO langues (langue) VALUES ('Allemand');
 INSERT INTO langues (langue) VALUES ('Amazighe');
 INSERT INTO langues (langue) VALUES ('Arménien');
