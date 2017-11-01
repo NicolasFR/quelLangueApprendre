@@ -52,7 +52,7 @@ class DB
                 $this->pdo = new PDO($dsn, Config::DB_USER, Config::DB_PASS, $arrExtraParam);
                 $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (\PDOException $e) {
-                throw new \Exception("PDO - Connexion impossible à la base de données");
+                throw new \Exception("PDO - Connexion impossible à la base de données : " . $e->getMessage());
             }
         }
         return $this->pdo;
