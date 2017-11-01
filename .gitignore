@@ -1,6 +1,2 @@
-
-.idea/
-db/dataBase
-
 composer.lock
 vendor/
