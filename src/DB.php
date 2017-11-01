@@ -40,7 +40,8 @@ class DB
 
     /**
      * Retourne une instance de l'objet PDO connecté à la base de données
-     * @return \PDO
+     * @return PDO
+     * @throws \Exception
      */
     private function getPDO()
     {
@@ -51,8 +52,7 @@ class DB
                 $this->pdo = new PDO($dsn, Config::DB_USER, Config::DB_PASS, $arrExtraParam);
                 $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (\PDOException $e) {
-                $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage();
-                die($msg);
+                throw new \Exception("PDO - Connexion impossible à la base de données");
             }
         }
         return $this->pdo;
