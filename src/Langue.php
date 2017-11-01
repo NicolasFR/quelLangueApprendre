@@ -8,19 +8,26 @@
 namespace App;
 
 /**
- * Class Langue
+ * Classe Langue
+ * @author Nicolas Ferrier <nicolas.ferier.nf@gmail.com>
  * @package App
  */
 class Langue
 {
-    /** @var string Langue proposé */
+    /**
+     * Langue proposée à l'utilisateur
+     * @var string
+     */
     private $langue;
 
-    /** @var  DB instance permettant l'acces à la base de données*/
+    /**
+     * instance permettant l'acces à la base de données
+     * @var  DB
+     */
     private $db;
 
     /**
-     * Langue constructor.
+     * Constructeur de la classe Langue
      */
     public function __construct()
     {
@@ -36,12 +43,7 @@ class Langue
     {
         // determine aléatoirement l'id de la langue entre un l'ID le plus grand
         $id = random_int(1, $this->getLastID());
-        //requete prepare
-        $req = $this->db->connect()->prepare("SELECT langue FROM langues WHERE id = ?");
-        // execution de la requete
-        $req->execute(array($id));
-        // recupere le résultat
-        $data = $req->fetch();
+        $data = $this->db->prepare("SELECT langue FROM langues WHERE id = ?", [$id], false);
         $this->langue = $data['langue'];
         // retourne la langue
         return $this->langue;
@@ -53,8 +55,7 @@ class Langue
      */
     public function getLastID(): int
     {
-        $response = $this->db->connect()->query("SELECT MAX(id) AS Max FROM langues;");
-        $donnees = $response->fetch();
+        $donnees = $this->db->query("SELECT MAX(id) AS Max FROM langues;", false);
         return (int)$donnees['Max'];
     }
 }

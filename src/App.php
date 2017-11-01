@@ -6,13 +6,16 @@
  */
 
 namespace App;
+
 /**
- * Class App
+ * Classe App
+ * @author Nicolas Ferrier <nicolas.ferier.nf@gmail.com>
  * @package App
  */
 class App
 {
     /**
+     * Permet l'affichage de la langue
      * @return string
      */
     public function newLangue(): string

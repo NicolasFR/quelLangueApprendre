@@ -1,15 +1,16 @@
 {
-  "name": "vendor_name/package_name",
-  "description": "description_text",
-  "minimum-stability": "stable",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "author's name",
-      "email": "email@example.com"
-    }
-  ],
-  "autoload": {
-    "psr-4": {"App\\": "src/"}
-  }
+    "name": "nicolas/quel-langue-apprendre",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "authors": [
+        {
+            "name": "nicolas",
+            "email": "nicolas.ferrier.nf@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    },
+    "require": {}
 }
